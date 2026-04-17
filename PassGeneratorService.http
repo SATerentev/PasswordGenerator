@@ -1,0 +1,6 @@
+@PassGeneratorService_HostAddress = http://localhost:5142
+
+GET {{PassGeneratorService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
