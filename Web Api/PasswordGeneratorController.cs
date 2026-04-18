@@ -24,11 +24,6 @@ namespace PassGeneratorService.Controllers
         [HttpGet("generate")]
         public async Task<IActionResult> GeneratePassword([FromQuery] GenerationRequest requestData)
         {
-            if (requestData == null)
-            {
-                return BadRequest(new ErrorResponse { Type = "Error", Title = "Null", Detail = "Empty Request" });
-            }
-
             if (requestData.PassLength < _settings.MinLength || requestData.PassLength > _settings.MaxLength)
             {
                 return BadRequest(new ErrorResponse
